@@ -16,3 +16,13 @@ fun power(n: Int, times: Int): Int {
     return n * power(n, times - 1)
 }
 
+fun fibonacci(size: Int): List<Int> {
+    require(size > 0) { "Only positive values are supported" }
+
+    if (size == 1) return listOf(0)
+    if (size == 2) return listOf(0, 1)
+
+    val prev = fibonacci(size - 1)
+    val next = prev[prev.size - 1] + prev[prev.size - 2]
+    return prev + next
+}
