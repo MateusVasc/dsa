@@ -1,8 +1,8 @@
 package recursion
 
-import org.matt.recursion.factorial
-import org.matt.recursion.fibonacci
-import org.matt.recursion.power
+import org.matt.recursion.Recursion.factorial
+import org.matt.recursion.Recursion.fibonacci
+import org.matt.recursion.Recursion.power
 import kotlin.test.Test
 import kotlin.test.assertFailsWith
 
@@ -88,7 +88,7 @@ class Recursion {
     @Test
     fun `fibonacci should return the sequence successfully`() {
         // Given
-        val mockFibArr = mutableListOf(0, 1, 1, 2, 3)
+        val mockFibArr = listOf(0, 1, 1, 2, 3)
         val mockSize = 5
 
         // When
