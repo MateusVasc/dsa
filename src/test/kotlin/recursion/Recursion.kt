@@ -85,5 +85,27 @@ class Recursion {
         assert(e.message == mockEMessage)
     }
 
+    @Test
+    fun `fibonacci should return the sequence successfully`() {
+        // Given
+        val mockFibArr = mutableListOf(0, 1, 1, 2, 3)
+        val mockSize = 5
 
+        // When
+        val fib = fibonacci(mockSize)
+
+        // Then
+        assert(fib == mockFibArr)
+    }
+
+    @Test
+    fun `fibonacci should throw illegal argument exception when size smaller then one`() {
+        // Given
+        val mockEMessage = "Only positive values are supported"
+        val mockSize = 0
+
+        // Then When
+        val e = assertFailsWith<IllegalArgumentException> { fibonacci(mockSize) }
+        assert(e.message == mockEMessage)
+    }
 }
